@@ -147,7 +147,7 @@ int main() {
                         
                         impuesto_Actual = impuesto_Anterior;
                         
-                    }//Para el caso de A.
+                    }
                 }
             }
             //Fin de las condicionles.
