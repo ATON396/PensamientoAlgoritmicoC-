@@ -13,7 +13,7 @@ using namespace std;
 //Variables neseasarias para el programa.
 float p_base_A=0,p_base_B=0,p_base_C=0,fecha=0,inflacion_B=0,inflacion_C=0,n_Veiculos=0,impuesto_Anterior=0,total=0,impuesto_Actual=0;
 int cedula=0;
-string combustible="G", contribuyente="S", categoria="O", nombre=" ",placa=" ";
+string combustible="G", contribuyente="S", categoria="O", nombre=" ",placa=" ",año_impuesto="N";
 
 //inicio del programa.
 int main() {
@@ -81,18 +81,79 @@ int main() {
             cin>>fecha;
             cout<<" "<<endl;
             
-            cout<<"¿Cuanto fue el impuesto anterior para el veiculo( "<<placa<<" )?: ";
-            cin>>impuesto_Anterior;
+            cout<<"Este es tu primer año de impuestos para el ( "<<placa<<" ) S/n ?: ";
+            cin>>año_impuesto;
             cout<<" "<<endl;
-            //  FIN de los cin y cout para el usuario por veiculo.
+            
+            // si no es el primer año de pago de impuestos.
+            if(año_impuesto!="s"||año_impuesto!="S"){
+                
+                cout<<"¿Cuanto fue el impuesto anterior para el veiculo( "<<placa<<" )?: ";
+                cin>>impuesto_Anterior;
+                cout<<" "<<endl;
+            }
+        //  FIN de los cin y cout para el usuario por veiculo.
             
         // Inicio de Condicionales para cada categoria de veiculos.
-            if (categoria=="A"||categoria=="a"){}
-            if (combustible=="E"||combustible=="e"){}
-            if (fecha>=2014){}
-            if (impuesto_Anterior>impuesto_Actual){}
+                
+        // Se incrementa el precio base en 3%
+          if(categoria=="C"||categoria=="c"){
+                    
+               impuesto_Actual = p_base_C + (p_base_C *0.03);
+              
+          } else if(categoria=="B"||categoria=="b"){
+                        
+                impuesto_Actual= p_base_B + (p_base_B *0.03);
+              
+           } else if (categoria=="A"||categoria=="a"){
+                    
+                impuesto_Actual = p_base_A;
+               
+           }else{
+               
+               cout<<" Debes Elegir una categoria valida (A,B,C) "<<endl;
+           }
             
-        
+        // Se disminuye el precio base en 5%
+            if ((combustible=="E"||combustible=="e")||fecha>2014){
+                
+                if(categoria=="A"||categoria=="a"){
+                    
+                    impuesto_Actual = p_base_A - (p_base_A *0.05);
+                    
+                }else if(categoria=="B"||categoria=="b"){
+                    
+                    impuesto_Actual = p_base_B - (p_base_B *0.05);
+                    
+                }else if (categoria=="C"||categoria=="c"){
+                    
+                    impuesto_Actual = p_base_C - (p_base_C *0.05);
+                }
+                
+            }else{
+                cout<<" Debes Elegir una categoria valida (E/G) "<<endl;
+            }
+           
+            // Si el impuesto actual es mayor que el anerior.
+            if ((impuesto_Anterior<impuesto_Actual) && (año_impuesto!="s"||año_impuesto!="S")){
+                
+                //Categorias
+                if ((categoria=="C"||categoria=="c")||(categoria=="B"||categoria=="b")){
+                    
+                    impuesto_Actual = impuesto_Anterior + (impuesto_Anterior * 0.03);
+                    
+                }else{
+                    if(categoria=="A"||categoria=="a"){
+                        
+                        impuesto_Actual = impuesto_Anterior;
+                        
+                    }//Para el caso de A.
+                }
+            }
+            //Fin de las condicionles.
+            
+            
+            
         }// Fin del for para el Numero de Veiculos y variables. [Informacion por cada veiculo].
         
         
