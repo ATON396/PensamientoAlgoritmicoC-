@@ -22,6 +22,7 @@ int main() {
     while (contribuyente == "S"|| contribuyente =="s") {
         
         //Presentacion del programa e ingreso de informacion del contrubuyente y Gobierno.
+        cout<<" "<<endl;
         cout<<"Buen dia Estimado Contribuyente "<<endl;
         cout<<" "<<endl;
         cout<<"¿Cual es tu nombre: ";
@@ -152,7 +153,9 @@ int main() {
             }
             //Fin de las condicionles.
             
-            
+            //Mensaje por pantall del impuesto  pagar por ese carro.
+            cout<<nombre<<" Debes pagar la suma de $"<<impuesto_Actual<<" Por el veiculo de placa: "<<placa<<endl;
+            cout<<" "<<endl;
             
         }// Fin del for para el Numero de Veiculos y variables. [Informacion por cada veiculo].
         
