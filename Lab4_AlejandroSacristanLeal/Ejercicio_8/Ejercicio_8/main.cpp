@@ -96,7 +96,7 @@ int main() {
             
         // Inicio de Condicionales para cada categoria de veiculos.
                 
-        // Se incrementa el precio base en 3%
+        // Se incrementa el precio base en 3% para las categorias B Y C.
           if(categoria=="C"||categoria=="c"){
                     
                impuesto_Actual = p_base_C + (p_base_C *0.03);
@@ -114,7 +114,7 @@ int main() {
                cout<<" Debes Elegir una categoria valida (A,B,C) "<<endl;
            }
             
-        // Se disminuye el precio base en 5%
+        // Se disminuye el precio base en 5% O Descuento por E o fecha > 2014.
             if ((combustible=="E"||combustible=="e")||fecha>2014){
                 
                 if(categoria=="A"||categoria=="a"){
@@ -131,7 +131,7 @@ int main() {
                 }
                 
             }else{
-                cout<<" Debes Elegir una categoria valida (E/G) "<<endl;
+                cout<<" No tienes descuento del 5% ya que usas Gasolina(G) o tu carro es muy antiguo antes de 2014. "<<endl;
             }
            
             // Si el impuesto actual es mayor que el anerior.
