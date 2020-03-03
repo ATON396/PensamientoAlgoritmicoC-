@@ -57,9 +57,7 @@ int main() {
         
         for(int i=1;i<=n_Veiculos;i++){
             
-            total = total + impuesto_Actual;
-            total_secretaria = total_secretaria + total;
-            impuesto_Actual =0;
+            
             cout<<"Veiculo numero: "<<i<<endl;
             cout<<" "<<endl;
             
@@ -158,20 +156,24 @@ int main() {
             //Fin de las condicionles.
             
             //Mensaje por pantall del impuesto  pagar por ese carro.
+            cout<<" "<<endl;
             cout<<nombre<<" Cc: "<<cedula<<" Debes pagar la suma Total de $"<<impuesto_Actual<<" Por el veiculo de placa: "<<placa<<endl;
             cout<<" "<<endl;
             
-    
+            total = total + impuesto_Actual;
+            total_secretaria = total_secretaria + total;
+            impuesto_Actual =0;
         }// Fin del for para el Numero de Veiculos y variables. [Informacion por cada veiculo].
         
-        cout<<"Estimado Contribuyente la suma total de todo es: "<<endl;
-        cout<<nombre<<" Cc: "<<cedula<<" Debes pagar la suma Total de $"<<total<<" los veiculos incritos "<<endl;
+        cout<<"Estimado Contribuyente: "<<endl;
+        cout<<nombre<<" con cedula: "<<cedula<<" Debes pagar la suma Total de $"<<total<<" por los veiculos incritos "<<endl;
         cout<<" "<<endl;
         total =0;
         cout<<"¿Desa añadir a otro contribuyente? S/n:  ";
         cin>>contribuyente;
         
     }// Fin del While de Contrubuyente y Gobierno. [Informacion por contribuyente y Gobierno].
+    cout<<" "<<endl;
     cout<<"La secretaria hacienda ha recojido un total de: $ "<<total_secretaria<<endl;
     cout<<" "<<endl;
     cout<<"El contribuyente con mas aportes fue:  "<<cedula_m<<endl;
