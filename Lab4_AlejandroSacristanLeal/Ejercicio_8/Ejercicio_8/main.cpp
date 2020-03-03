@@ -159,9 +159,12 @@ int main() {
             cout<<" "<<endl;
             cout<<nombre<<" Cc: "<<cedula<<" Debes pagar la suma Total de $"<<impuesto_Actual<<" Por el veiculo de placa: "<<placa<<endl;
             cout<<" "<<endl;
-            
+           
+            // Sumadores de cuentas
             total = total + impuesto_Actual;
             total_secretaria = total_secretaria + total;
+            
+            // Reinicio de sumador para el siguiente viculo
             impuesto_Actual =0;
         }// Fin del for para el Numero de Veiculos y variables. [Informacion por cada veiculo].
         
@@ -182,6 +185,8 @@ int main() {
         
         //Reiniciamos total para el siguiente Contribuyente si lo hay.
         total =0;
+        
+        //Pregunta para la union de otro contribuyente
         cout<<"¿Desa añadir a otro contribuyente? S/n:  ";
         cin>>contribuyente;
         
