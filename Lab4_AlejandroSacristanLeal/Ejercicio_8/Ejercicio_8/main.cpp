@@ -168,6 +168,19 @@ int main() {
         cout<<"Estimado Contribuyente: "<<endl;
         cout<<nombre<<" con cedula: "<<cedula<<" Debes pagar la suma Total de $"<<total<<" por los veiculos incritos "<<endl;
         cout<<" "<<endl;
+        
+        //El mayor Contribuyente
+        if(total>n_mayor){
+            n_mayor = total;
+            cedula_m = cedula;
+        }else{
+            if(total<n_menor){
+                n_menor=total;
+                cedula_p = cedula;
+            }
+        }
+        
+        //Reiniciamos total para el siguiente Contribuyente si lo hay.
         total =0;
         cout<<"¿Desa añadir a otro contribuyente? S/n:  ";
         cin>>contribuyente;
