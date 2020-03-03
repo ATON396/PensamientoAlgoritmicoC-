@@ -11,8 +11,8 @@
 using namespace std;
 
 //Variables neseasarias para el programa.
-float p_base_A=0,p_base_B=0,p_base_C=0,fecha=0,inflacion_B=0,inflacion_C=0,n_Veiculos=0,impuesto_Anterior=0,total=0,impuesto_Actual=0;
-int cedula=0;
+float p_base_A=0,p_base_B=0,p_base_C=0,fecha=0,inflacion_B=0,inflacion_C=0,n_Veiculos=0,impuesto_Anterior=0,total=0,impuesto_Actual=0,n_mayor=0,n_menor=0, total_secretaria=0;
+int cedula=0,cedula_m=0,cedula_p=0;
 string combustible="G", contribuyente="S", categoria="O", nombre=" ",placa=" ",año_impuesto="N";
 
 //inicio del programa.
@@ -54,8 +54,12 @@ int main() {
         cout<<" "<<endl;
       
         //Iteraciones para agregar informacion sobre Veiculos
+        
         for(int i=1;i<=n_Veiculos;i++){
             
+            total = total + impuesto_Actual;
+            total_secretaria = total_secretaria + total;
+            impuesto_Actual =0;
             cout<<"Veiculo numero: "<<i<<endl;
             cout<<" "<<endl;
             
@@ -154,13 +158,23 @@ int main() {
             //Fin de las condicionles.
             
             //Mensaje por pantall del impuesto  pagar por ese carro.
-            cout<<nombre<<" Debes pagar la suma de $"<<impuesto_Actual<<" Por el veiculo de placa: "<<placa<<endl;
+            cout<<nombre<<" Cc: "<<cedula<<" Debes pagar la suma Total de $"<<impuesto_Actual<<" Por el veiculo de placa: "<<placa<<endl;
             cout<<" "<<endl;
             
+    
         }// Fin del for para el Numero de Veiculos y variables. [Informacion por cada veiculo].
         
+        cout<<"Estimado Contribuyente la suma total de todo es: "<<endl;
+        cout<<nombre<<" Cc: "<<cedula<<" Debes pagar la suma Total de $"<<total<<" los veiculos incritos "<<endl;
+        cout<<" "<<endl;
+        total =0;
+        cout<<"¿Desa añadir a otro contribuyente? S/n:  ";
+        cin>>contribuyente;
         
     }// Fin del While de Contrubuyente y Gobierno. [Informacion por contribuyente y Gobierno].
-    
+    cout<<"La secretaria hacienda ha recojido un total de: $ "<<total_secretaria<<endl;
+    cout<<" "<<endl;
+    cout<<"El contribuyente con mas aportes fue:  "<<cedula_m<<endl;
+    cout<<" "<<endl;
     return 0;
 }
