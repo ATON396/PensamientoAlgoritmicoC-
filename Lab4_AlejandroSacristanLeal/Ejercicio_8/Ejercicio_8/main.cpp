@@ -196,5 +196,6 @@ int main() {
     cout<<" "<<endl;
     cout<<"El contribuyente con mas aportes fue:  "<<cedula_m<<endl;
     cout<<" "<<endl;
+    
     return 0;
 }
