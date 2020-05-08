@@ -67,6 +67,7 @@ int primos(int rnumber){
 
 /*Funcion que se alimenta de la funcion primos
  para allar el siguiente primo*/
+
 int next(int primo){
     
     int contador=0,next=0,lim=0,inicio=0;
